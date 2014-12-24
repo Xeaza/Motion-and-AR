@@ -14,6 +14,7 @@
 		34AB06E81A4B14FE00E11873 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34AB06E71A4B14FE00E11873 /* Images.xcassets */; };
 		34AB06EB1A4B14FE00E11873 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34AB06E91A4B14FE00E11873 /* LaunchScreen.xib */; };
 		34AB06F71A4B14FE00E11873 /* Motion_and_ARTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AB06F61A4B14FE00E11873 /* Motion_and_ARTests.m */; };
+		34AB07351A4B3EAA00E11873 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34AB07341A4B3EAA00E11873 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		34AB06F01A4B14FE00E11873 /* Motion and ARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Motion and ARTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34AB06F51A4B14FE00E11873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34AB06F61A4B14FE00E11873 /* Motion_and_ARTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Motion_and_ARTests.m; sourceTree = "<group>"; };
+		34AB07341A4B3EAA00E11873 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34AB07351A4B3EAA00E11873 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +99,7 @@
 		34AB06DA1A4B14FE00E11873 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				34AB07341A4B3EAA00E11873 /* CoreMotion.framework */,
 				34AB06DB1A4B14FE00E11873 /* Info.plist */,
 				34AB06DC1A4B14FE00E11873 /* main.m */,
 			);
@@ -346,8 +350,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Motion and AR/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -356,8 +362,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Motion and AR/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -414,6 +422,7 @@
 				34AB06FC1A4B14FE00E11873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34AB06FD1A4B14FE00E11873 /* Build configuration list for PBXNativeTarget "Motion and ARTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +431,7 @@
 				34AB06FF1A4B14FE00E11873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
