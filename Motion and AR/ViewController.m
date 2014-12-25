@@ -101,7 +101,7 @@ float R = 40;
     float accY = userAcceleration.y;
     float accZ = userAcceleration.z;
 
-    [self updateBallWithRoll:roll Pitch:pitch Yaw:yaw accX:accX accY:accY accZ:0];
+    [self updateBallWithRoll:roll Pitch:pitch Yaw:yaw accX:accX accY:accY accZ:accZ];
 
 }
 
