@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) CMMotionManager * motionManager;
 @property (nonatomic, strong) UIView * ball;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -72,6 +73,41 @@ float R = 40;
 
     // 2.1 Start updating the motion using the reference frame CMAttitudeReferenceFrameXArbitraryCorrectedZVertical
     [self.motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXArbitraryCorrectedZVertical];
+
+    // *************************************************************************************************
+    // ****************** This way is very jittery and not idea for user movement **********************
+    // *************************************************************************************************
+    /*
+    ViewController * __weak weakSelf = self;
+    if (self.motionManager.accelerometerAvailable) {
+        self.motionManager.accelerometerUpdateInterval = 0.01f;
+        [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue]
+                                      withHandler:^(CMAccelerometerData *data, NSError *error) {
+                                          double rotation = atan2(data.acceleration.x, data.acceleration.y) - M_PI;
+                                          weakSelf.imageView.transform = CGAffineTransformMakeRotation(rotation);
+                                      }];
+    }
+    */
+    // *************************************************************************************************
+    // *************************************************************************************************
+
+
+    // *************************************************************************************************
+    //  Using the gyroscope, Core Motion separates user movement from gravitational acceleration and presents each  as its own property of the CMDeviceMotionData instance that we receive in our handler
+    // *************************************************************************************************
+
+    ViewController * __weak weakSelf = self;
+    if (self.motionManager.deviceMotionAvailable) {
+        self.motionManager.deviceMotionUpdateInterval = 0.01f;
+        [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue]
+                                     withHandler:^(CMDeviceMotion *data, NSError *error) {
+                                         double rotation = atan2(data.gravity.x, data.gravity.y) - M_PI;
+                                         weakSelf.imageView.transform = CGAffineTransformMakeRotation(rotation);
+                                     }];
+    }
+    // *************************************************************************************************
+    // *************************************************************************************************
+
 
 
 }
