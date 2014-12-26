@@ -35,7 +35,7 @@ float R = 40;
 
 - (void)updateBallWithRoll:(float)roll Pitch:(float)pitch Yaw:(float)yaw accX:(float)accX accY:(float)accY accZ:(float)accZ
 {
-    //NSLog(@"pitch: %f roll: %f yaw: %f", pitch, roll, yaw);
+    NSLog(@"pitch: %f roll: %f yaw: %f", pitch, roll, yaw);
     X += 2 * roll;
     Y += 2 * pitch;
 
